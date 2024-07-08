@@ -1,0 +1,30 @@
+.profile {
+  @apply rounded-lg border bg-white shadow;
+
+  &__header {
+    @apply px-4 py-5 sm:px-6;
+
+    &_title {
+      @apply text-lg font-medium leading-6 text-gray-900;
+    }
+  }
+
+  &__body {
+    @apply border-t border-gray-200 px-4 py-5 sm:p-0;
+
+    &_list {
+      @apply sm:divide-y sm:divide-gray-200;
+
+      &_item {
+        @apply py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 sm:py-5;
+
+        &_label {
+          @apply text-sm font-medium text-gray-500;
+        }
+        &_value {
+          @apply mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0;
+        }
+      }
+    }
+  }
+}

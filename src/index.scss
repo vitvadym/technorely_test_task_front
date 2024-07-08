@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .form {
+    @apply form-control mx-auto flex max-w-lg flex-col gap-2;
+
+    &__content {
+      @apply space-y-2 md:space-y-4;
+    }
+
+    &__title {
+      @apply text-center text-xl font-bold text-gray-900 md:text-2xl;
+    }
+
+    &__input {
+      @apply input input-bordered w-full  focus:outline-none;
+
+      &-error {
+        @apply input input-bordered input-error w-full;
+      }
+
+      &-error-message {
+        @apply text-xs text-red-500;
+      }
+    }
+
+    &__label {
+      @apply mb-2 block text-sm  text-gray-900;
+    }
+
+    &__submit_button {
+      @apply btn btn-neutral w-full text-white;
+    }
+
+    &__existing_account {
+      @apply text-sm font-light text-gray-500;
+    }
+
+    &__link {
+      @apply link link-primary font-semibold;
+    }
+  }
+}

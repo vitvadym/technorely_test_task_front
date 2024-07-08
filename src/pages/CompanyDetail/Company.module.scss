@@ -1,0 +1,15 @@
+.company {
+  @apply p-2 text-justify;
+
+  &__title {
+    @apply mb-2 text-center text-xl font-bold text-gray-900;
+  }
+
+  &__label {
+    @apply divider divider-start text-lg font-semibold;
+  }
+
+  &__value {
+    @apply p-2 text-gray-500;
+  }
+}

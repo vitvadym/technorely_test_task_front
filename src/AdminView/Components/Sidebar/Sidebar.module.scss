@@ -1,0 +1,15 @@
+.sidebar {
+  @apply flex h-fit flex-col rounded-md bg-slate-200 shadow-md;
+
+  &__links {
+    @apply flex flex-grow flex-col gap-4 p-2;
+
+    &_link {
+      @apply flex items-center justify-between rounded-lg px-4 py-2 font-medium text-gray-700 transition duration-300 ease-in-out;
+
+      &:hover {
+        @apply bg-slate-300;
+      }
+    }
+  }
+}
