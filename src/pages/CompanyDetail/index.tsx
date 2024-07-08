@@ -22,6 +22,7 @@ const CompanyDetail = () => {
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
   const isLoading = useAppSelector(selectIsLoading);
   const isAdmin = useAppSelector(selectIsAdmin);
   const error = useAppSelector(selectError);

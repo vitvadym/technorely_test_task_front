@@ -32,7 +32,7 @@ export const registerUser: AsyncThunk<
   async (formData, { rejectWithValue }) => {
     try {
       const { data }: AxiosResponse<IUser> = await axios.post(
-        "http://localhost:3500/api/auth/signup",
+        "/auth/signup",
         formData,
       );
 
@@ -58,7 +58,7 @@ export const loginUser: AsyncThunk<
   async (formData, { rejectWithValue }) => {
     try {
       const { data }: AxiosResponse<IUser> = await axios.post(
-        "http://localhost:3500/api/auth/signin",
+        "/auth/signin",
         formData,
       );
 
@@ -68,7 +68,6 @@ export const loginUser: AsyncThunk<
       return data;
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log(error);
         return rejectWithValue(error.response?.data.message);
       }
     }
@@ -95,7 +94,7 @@ export const getUserById: AsyncThunk<
   IUser | undefined,
   string,
   Record<string, never>
-> = createAsyncThunk("user/getUserById", async (id, { rejectWithValue }) => {
+> = createAsyncThunk("/user/getUserById", async (id, { rejectWithValue }) => {
   try {
     const { data }: AxiosResponse<IUser> = await axios.get(`/user/${id}`);
     return data;
@@ -110,7 +109,7 @@ export const deleteUser: AsyncThunk<
   undefined,
   number,
   Record<string, never>
-> = createAsyncThunk("user/deleteUser", async (id, { rejectWithValue }) => {
+> = createAsyncThunk("/user/deleteUser", async (id, { rejectWithValue }) => {
   try {
     await axios.delete(`/user/${id}`);
   } catch (error) {
@@ -130,7 +129,6 @@ export const updateUser: AsyncThunk<
 > = createAsyncThunk(
   "user/updateUser",
   async ({ formData, id }, { rejectWithValue }) => {
-    console.log(formData);
     try {
       const { data }: AxiosResponse<IUser> = await axios.put(
         `/user/edit/${id}`,

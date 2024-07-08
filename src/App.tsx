@@ -1,5 +1,4 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-
 import Layout from "./components/Layout";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
@@ -15,7 +14,6 @@ import Users from "./AdminView/pages/Users";
 import Companies from "./AdminView/pages/Companies";
 import EditCompany from "./pages/EditCompany";
 import EditUser from "./pages/EditUser";
-import SearchResult from "./pages/SearchResult";
 
 const App = () => {
   return (
@@ -49,11 +47,6 @@ const App = () => {
             <Route
               path="company/edit/:id"
               element={<EditCompany />}
-            />
-
-            <Route
-              path="search"
-              element={<SearchResult />}
             />
 
             <Route

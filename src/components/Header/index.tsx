@@ -16,8 +16,6 @@ const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // const searchTerm = searchParams.get("search") || "";
-
   const handleChangeSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };

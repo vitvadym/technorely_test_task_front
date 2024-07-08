@@ -27,6 +27,7 @@ const EditCompany = () => {
 
   const isLoading = useAppSelector(selectIsLoading);
   const error = useAppSelector(selectError);
+
   const [company, setCompany] = useState<ICompany | null>(null);
   const { id } = useParams();
 

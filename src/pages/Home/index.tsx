@@ -21,15 +21,16 @@ import { ICompany } from "../../types/company.type";
 const Home = () => {
   const [myCompanies, setMyCompanies] = useState<ICompany[] | []>([]);
   const [showMyCompanies, setShowMyCompanies] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { handleChangePage, page } = usePage();
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const isLoading = useAppSelector(selectIsLoading);
   const isAuthenticated = useAppSelector(selectIsAuth);
   const companies = useAppSelector(selectCompanies);
-  const navigate = useNavigate();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { handleChangePage, page } = usePage();
   const limit = searchParams.get("limit") || 6;
   const search = searchParams.get("search") || "";
 

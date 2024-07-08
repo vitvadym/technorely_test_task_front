@@ -31,7 +31,7 @@ export const createCompany: AsyncThunk<
   async (formData, { rejectWithValue }) => {
     try {
       const { data }: AxiosResponse<ICompany> = await axios.post(
-        "company/create",
+        "/company/create",
         formData,
       );
       return data;
@@ -128,9 +128,8 @@ export const updateCompany: AsyncThunk<
   },
   Record<string, never>
 > = createAsyncThunk(
-  "companies/updateCompany",
+  "/companies/updateCompany",
   async ({ formData, id }, { rejectWithValue }) => {
-    console.log(formData);
     try {
       const { data }: AxiosResponse<ICompany> = await axios.put(
         `/company/edit/${id}`,
@@ -139,7 +138,6 @@ export const updateCompany: AsyncThunk<
       return data;
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log(error);
         return rejectWithValue(error.response?.data.message);
       }
     }

@@ -22,6 +22,7 @@ import { useEffect } from "react";
 const SignUp = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
   const error = useAppSelector(selectError);
   const isLoading = useAppSelector(selectIsLoading);
   const user = useAppSelector(selectUser);
